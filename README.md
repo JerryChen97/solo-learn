@@ -201,6 +201,53 @@ Please, check out our [documentation](https://solo-learn.readthedocs.io/en/lates
 
 If you want to contribute to solo-learn, make sure you take a look at [how to contribute](https://github.com/vturrisi/solo-learn/blob/main/.github/CONTRIBUTING.md) and follow the [code of conduct](https://github.com/vturrisi/solo-learn/blob/main/.github/CODE_OF_CONDUCT.md)
 
+## Contributing
+
+This repository uses branch protection rules to maintain code quality and require peer review:
+
+### Branch Protection Rules
+- **Main branch is protected**: Direct pushes to `main` are blocked for regular contributors
+- **Pull Request required**: All changes must go through a Pull Request with at least 1 approval
+- **Linear history enforced**: No merge commits allowed (rebase or squash-merge only)
+- **Conversations must be resolved**: All review comments must be addressed before merging
+- **No force pushes or deletions**: Repository history is protected
+
+### Workflow for Contributors
+1. **Create a feature branch**: `git checkout -b feature/your-feature-name`
+2. **Make your changes**: Develop and test your feature
+3. **Push to remote**: `git push origin feature/your-feature-name`
+4. **Create a Pull Request**: Use GitHub UI or `gh pr create`
+5. **Get review and approval**: At least 1 team member must approve
+6. **Merge**: Use "Squash and merge" or "Rebase and merge" to maintain linear history
+
+### Workflow for Owners/Admins
+Owners and admins have additional privileges and can choose between two workflows:
+
+**Option 1: Direct Push (Bypasses Protection)**
+```bash
+git checkout main
+git pull origin main
+# Make changes
+git add .
+git commit -m "Your commit message"
+git push origin main  # This will bypass branch protection rules
+```
+
+**Option 2: Standard PR Workflow (Recommended)**
+```bash
+git checkout -b feature/your-feature
+# Make changes
+git push origin feature/your-feature
+gh pr create  # Create and merge through PR process
+```
+
+**Note**: Even when owners push directly to main, GitHub shows "Bypassed rule violations" to maintain transparency. The PR workflow is still recommended for complex changes to benefit from peer review.
+
+### Environment Setup
+1. **Python Environment**: Create a virtual environment: `python -m venv .venv && source .venv/bin/activate`
+2. **Install Dependencies**: `pip install -r requirements.txt`
+3. **Run Tests**: `python -m pytest tests/` to ensure everything works
+
 ---
 
 ## Model Zoo
