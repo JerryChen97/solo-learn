@@ -206,7 +206,7 @@ If you want to contribute to solo-learn, make sure you take a look at [how to co
 This repository uses branch protection rules to maintain code quality and require peer review:
 
 ### Branch Protection Rules
-- **Main branch is protected**: Direct pushes to `main` are blocked for regular contributors
+- **Main branch is strictly protected**: Direct pushes to `main` are blocked for **everyone** (including owners)
 - **Pull Request required**: All changes must go through a Pull Request with at least 1 approval
 - **Linear history enforced**: No merge commits allowed (rebase or squash-merge only)
 - **Conversations must be resolved**: All review comments must be addressed before merging
@@ -221,19 +221,8 @@ This repository uses branch protection rules to maintain code quality and requir
 6. **Merge**: Use "Squash and merge" or "Rebase and merge" to maintain linear history
 
 ### Workflow for Owners/Admins
-Owners and admins have additional privileges and can choose between two workflows:
+**All changes must go through Pull Requests** - no exceptions for normal development:
 
-**Option 1: Direct Push (Bypasses Protection)**
-```bash
-git checkout main
-git pull origin main
-# Make changes
-git add .
-git commit -m "Your commit message"
-git push origin main  # This will bypass branch protection rules
-```
-
-**Option 2: Standard PR Workflow (Recommended)**
 ```bash
 git checkout -b feature/your-feature
 # Make changes
@@ -241,7 +230,15 @@ git push origin feature/your-feature
 gh pr create  # Create and merge through PR process
 ```
 
-**Note**: Even when owners push directly to main, GitHub shows "Bypassed rule violations" to maintain transparency. The PR workflow is still recommended for complex changes to benefit from peer review.
+### Emergency Access for Owners
+For critical emergencies only, owners can temporarily disable branch protection:
+
+1. **Disable protection**: Go to Settings > Branches > Edit main branch protection
+2. **Make emergency changes**: Push directly to main
+3. **Re-enable protection**: Restore the protection rules immediately
+4. **Document the emergency**: Create an issue explaining why emergency access was used
+
+**Note**: This ensures a clear audit trail and separation between normal development and emergency procedures.
 
 ### Environment Setup
 1. **Python Environment**: Create a virtual environment: `python -m venv .venv && source .venv/bin/activate`
