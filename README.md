@@ -357,6 +357,79 @@ We report the training efficiency of some methods using a ResNet18 with and with
 
 ---
 
+## Contributing
+
+### Branch Protection & Workflow
+This repository uses branch protection to maintain code quality and encourage collaborative development:
+
+#### 🛡️ **Protection Rules**
+- **Pull Request Required**: All changes to `main` must go through a pull request
+- **Review Required**: At least 1 approval from team members before merging
+- **Linear History**: Maintains clean, linear commit history
+- **Discussion Resolution**: All conversations must be resolved before merging
+- **No Force Pushes**: Prevents history corruption
+
+#### 🚀 **Development Workflow**
+1. **Create a Feature Branch**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   # or
+   git checkout -b fix/issue-description
+   ```
+
+2. **Make Changes and Commit**:
+   ```bash
+   git add .
+   git commit -m "type: description of changes"
+   ```
+
+3. **Push and Create PR**:
+   ```bash
+   git push -u origin feature/your-feature-name
+   gh pr create --title "feat: your feature description"
+   ```
+
+4. **Review Process**:
+   - Get at least 1 approval from team members
+   - Address any review comments
+   - Ensure all discussions are resolved
+   - Merge when ready!
+
+#### 🤖 **For AI/Copilot Contributions**
+- All AI-generated code must go through the PR review process
+- Human review ensures code quality and alignment with project goals
+- Maintainers will review and approve AI contributions before merging
+
+#### ⚡ **Owner Emergency Access**
+- **Normal Development**: Owners must use PRs like everyone else (enforce_admins=true)
+- **Emergency Only**: For critical fixes, owners can temporarily disable protection:
+
+  **Emergency Procedure:**
+  1. **Disable protection**: GitHub Settings > Branches > Edit main branch protection rule
+  2. **Make urgent fix**:
+     ```bash
+     git checkout main
+     git pull origin main
+     git add .
+     git commit -m "EMERGENCY: urgent hotfix description" 
+     git push origin main
+     ```
+  3. **Re-enable protection**: Restore branch protection immediately
+  4. **Document**: Create issue explaining why emergency access was needed
+
+- **Recommended approach** (even for urgent fixes):
+  ```bash
+  # Faster than disabling protection, and maintains audit trail
+  git checkout -b hotfix/urgent-fix
+  git add .
+  git commit -m "fix: urgent hotfix description"
+  git push -u origin hotfix/urgent-fix
+  gh pr create --title "URGENT: fix critical issue" --body "Emergency fix for..."
+  # Get approval from team member and merge
+  ```
+
+---
+
 ## Citation
 If you use solo-learn, please cite our [paper](https://jmlr.org/papers/v23/21-1155.html):
 ```bibtex
