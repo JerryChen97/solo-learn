@@ -221,8 +221,9 @@ This repository uses branch protection rules to maintain code quality and requir
 6. **Merge**: Use "Squash and merge" or "Rebase and merge" to maintain linear history
 
 ### Workflow for Owners/Admins
-**All changes must go through Pull Requests** - no exceptions for normal development:
+- **All changes must go through Pull Requests** - no exceptions for normal development
 
+**Standard PR workflow:**
 ```bash
 git checkout -b feature/your-feature
 # Make changes
