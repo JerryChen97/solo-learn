@@ -357,7 +357,25 @@ This repository uses branch protection to maintain code quality and encourage co
 
 #### ⚡ **Owner Privileges**
 - Repository owners can push directly to `main` when needed for urgent fixes
+  ```bash
+  # Owner can push directly (bypasses PR requirement due to enforce_admins=false)
+  git checkout main
+  git pull origin main
+  git add .
+  git commit -m "fix: urgent hotfix description"
+  git push origin main
+  ```
 - However, PR workflow is strongly encouraged for all changes to maintain review culture
+  ```bash
+  # Recommended approach even for owners
+  git checkout -b hotfix/urgent-fix
+  git add .
+  git commit -m "fix: urgent hotfix description"
+  git push -u origin hotfix/urgent-fix
+  gh pr create --title "fix: urgent hotfix" --body "Urgent fix for..."
+  # Self-approve if needed: gh pr review --approve
+  # Then merge: gh pr merge --squash
+  ```
 
 ---
 
