@@ -355,26 +355,32 @@ This repository uses branch protection to maintain code quality and encourage co
 - Human review ensures code quality and alignment with project goals
 - Maintainers will review and approve AI contributions before merging
 
-#### ⚡ **Owner Privileges**
-- Repository owners can push directly to `main` when needed for urgent fixes
+#### ⚡ **Owner Emergency Access**
+- **Normal Development**: Owners must use PRs like everyone else (enforce_admins=true)
+- **Emergency Only**: For critical fixes, owners can temporarily disable protection:
+
+  **Emergency Procedure:**
+  1. **Disable protection**: GitHub Settings > Branches > Edit main branch protection rule
+  2. **Make urgent fix**:
+     ```bash
+     git checkout main
+     git pull origin main
+     git add .
+     git commit -m "EMERGENCY: urgent hotfix description" 
+     git push origin main
+     ```
+  3. **Re-enable protection**: Restore branch protection immediately
+  4. **Document**: Create issue explaining why emergency access was needed
+
+- **Recommended approach** (even for urgent fixes):
   ```bash
-  # Owner can push directly (bypasses PR requirement due to enforce_admins=false)
-  git checkout main
-  git pull origin main
-  git add .
-  git commit -m "fix: urgent hotfix description"
-  git push origin main
-  ```
-- However, PR workflow is strongly encouraged for all changes to maintain review culture
-  ```bash
-  # Recommended approach even for owners
+  # Faster than disabling protection, and maintains audit trail
   git checkout -b hotfix/urgent-fix
   git add .
   git commit -m "fix: urgent hotfix description"
   git push -u origin hotfix/urgent-fix
-  gh pr create --title "fix: urgent hotfix" --body "Urgent fix for..."
-  # Self-approve if needed: gh pr review --approve
-  # Then merge: gh pr merge --squash
+  gh pr create --title "URGENT: fix critical issue" --body "Emergency fix for..."
+  # Get approval from team member and merge
   ```
 
 ---
