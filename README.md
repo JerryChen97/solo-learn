@@ -220,7 +220,7 @@ This repository uses branch protection rules to maintain code quality and requir
 5. **Get review and approval**: At least 1 team member must approve
 6. **Merge**: Use "Squash and merge" or "Rebase and merge" to maintain linear history
 
-### Workflow for Owners/Admins
+### Standard PR Workflow
 - **All changes must go through Pull Requests** - no exceptions for normal development
 
 **Standard PR workflow:**
