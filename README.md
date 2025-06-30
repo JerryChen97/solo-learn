@@ -371,3 +371,4 @@ If you use solo-learn, please cite our [paper](https://jmlr.org/papers/v23/21-11
   url     = {http://jmlr.org/papers/v23/21-1155.html}
 }
 ```
+
