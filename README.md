@@ -312,6 +312,55 @@ We report the training efficiency of some methods using a ResNet18 with and with
 
 ---
 
+## Contributing
+
+### Branch Protection & Workflow
+This repository uses branch protection to maintain code quality and encourage collaborative development:
+
+#### 🛡️ **Protection Rules**
+- **Pull Request Required**: All changes to `main` must go through a pull request
+- **Review Required**: At least 1 approval from team members before merging
+- **Linear History**: Maintains clean, linear commit history
+- **Discussion Resolution**: All conversations must be resolved before merging
+- **No Force Pushes**: Prevents history corruption
+
+#### 🚀 **Development Workflow**
+1. **Create a Feature Branch**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   # or
+   git checkout -b fix/issue-description
+   ```
+
+2. **Make Changes and Commit**:
+   ```bash
+   git add .
+   git commit -m "type: description of changes"
+   ```
+
+3. **Push and Create PR**:
+   ```bash
+   git push -u origin feature/your-feature-name
+   gh pr create --title "feat: your feature description"
+   ```
+
+4. **Review Process**:
+   - Get at least 1 approval from team members
+   - Address any review comments
+   - Ensure all discussions are resolved
+   - Merge when ready!
+
+#### 🤖 **For AI/Copilot Contributions**
+- All AI-generated code must go through the PR review process
+- Human review ensures code quality and alignment with project goals
+- Maintainers will review and approve AI contributions before merging
+
+#### ⚡ **Owner Privileges**
+- Repository owners can push directly to `main` when needed for urgent fixes
+- However, PR workflow is strongly encouraged for all changes to maintain review culture
+
+---
+
 ## Citation
 If you use solo-learn, please cite our [paper](https://jmlr.org/papers/v23/21-1155.html):
 ```bibtex
