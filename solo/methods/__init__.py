@@ -20,6 +20,7 @@
 from solo.methods.barlow_twins import BarlowTwins
 from solo.methods.base import BaseMethod
 from solo.methods.byol import BYOL
+from solo.methods.byol_dual_threshold_iot_only import dual_threshold_BYOL
 from solo.methods.deepclusterv2 import DeepClusterV2
 from solo.methods.dino import DINO
 from solo.methods.linear import LinearModel
@@ -47,6 +48,7 @@ METHODS = {
     # methods
     "barlow_twins": BarlowTwins,
     "byol": BYOL,
+    "dual_threshold_byol": dual_threshold_BYOL,
     "deepclusterv2": DeepClusterV2,
     "dino": DINO,
     "mae": MAE,
@@ -68,6 +70,7 @@ METHODS = {
 __all__ = [
     "BarlowTwins",
     "BYOL",
+    "dual_threshold_BYOL",
     "BaseMethod",
     "DeepClusterV2",
     "DINO",

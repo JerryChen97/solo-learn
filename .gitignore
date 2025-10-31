@@ -6,6 +6,9 @@ wandb/
 wandb*/
 !scripts/**
 
+# local documentation
+docs_local/
+
 # umap dir
 auto_umap/
 
