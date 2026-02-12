@@ -38,6 +38,7 @@ from solo.methods.vibcreg import VIbCReg
 from solo.methods.vicreg import VICReg
 from solo.methods.wmse import WMSE
 from solo.methods.all4one import All4One
+from solo.methods.iot_dual_threshold_byol import IOTDualThresholdBYOL
 
 
 METHODS = {
@@ -45,6 +46,7 @@ METHODS = {
     "base": BaseMethod,
     "linear": LinearModel,
     # methods
+    "iot_dual_threshold_byol": IOTDualThresholdBYOL,
     "barlow_twins": BarlowTwins,
     "byol": BYOL,
     "deepclusterv2": DeepClusterV2,
@@ -66,6 +68,8 @@ METHODS = {
     "all4one": All4One,
 }
 __all__ = [
+    "IOTDualThresholdBYOL",  # Add here too
+
     "BarlowTwins",
     "BYOL",
     "BaseMethod",
